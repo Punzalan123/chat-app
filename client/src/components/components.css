@@ -3,6 +3,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    background-color: #0B2447;
 }
 
 .contactsContainer .brand{
@@ -24,11 +25,13 @@
     align-items: center;
     overflow: auto;
     gap: 12px;
+    padding: 12px 0;
 }
 .contactsContainer .contactsList .contact{
     background-color: #576CBC;
     padding: 10px 0;
     width: 90%;
+    border-radius: 8px;
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -37,6 +40,11 @@
 
 .contactsContainer .contactsList .contact .username h3{
     color: whitesmoke;
+}
+
+.contactsContainer .contactsList .contact.selected{
+    background-color: #0004ff;
+    transition: 0.3s ease-in;
 }
 
 .contactsContainer .currentUser {
@@ -106,7 +114,7 @@
 }
 
 .ChatSubmit svg:hover{
-    transform: scale(1.05);
+    transform: scale(1.1);
     color: #A5D7E8 !important;
 }
 
@@ -196,11 +204,15 @@
     justify-content: flex-start;
 }
 
-.chatCon .chatMessages::-webkit-scrollbar{
+.chatCon .chatMessages .message.received .messageContent{
+    background-color: #0004ff;
+}
+
+.chatCon .chatMessages::-webkit-scrollbar, .contactsContainer .contactsList::-webkit-scrollbar{
     width: 4px;
 }
 
-.chatMessages::-webkit-scrollbar-thumb{
+.chatMessages::-webkit-scrollbar-thumb, .contactsContainer .contactsList::-webkit-scrollbar-thumb{
     background-color: #0B2447;
 }
 
