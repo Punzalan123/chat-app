@@ -21,7 +21,6 @@ export const Contacts = ({contacts, current, chat}) => {
         chat(c);
     };
 
-
   return <React.Fragment>
     {
      name && (

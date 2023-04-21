@@ -4,6 +4,7 @@ import { ChatInput } from './chatInput';
 import axios from 'axios';
 import { getAllMessage, sendMessage } from '../utils/API_Routes';
 import {BsFillCameraVideoFill as Vid, BsFillTelephoneFill as Call} from 'react-icons/bs';
+import { v4 as uuidv4 } from 'uuid';
 
 export const ChatCon = ({ current, currentUser, socket }) => {
 
@@ -75,8 +76,8 @@ export const ChatCon = ({ current, currentUser, socket }) => {
                         </div>
                         <div className='chatMessages'>
                             {
-                                msg.map((m,i) => (
-                                    <div key={i} ref={scrollRef}>
+                                msg.map((m) => (
+                                    <div key={uuidv4()} ref={scrollRef}>
                                         <div className={`message ${m.fromSelf ? "sent" : "received"}`}>
                                             <div className='messageContent'>
                                                 <p>{m.message}</p>

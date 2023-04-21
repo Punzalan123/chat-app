@@ -47,6 +47,10 @@
     transition: 0.3s ease-in;
 }
 
+.contactsContainer .contactsList .contact.selected h3{
+    font-size: 21px;
+}
+
 .contactsContainer .currentUser {
     background-color: #576CBC;
     display: flex;
@@ -135,11 +139,10 @@
     font-size: 15px;
     color: whitesmoke;
 }
-
-.messageCon{
-    height: 89%;
+.logOutBtn:hover{
+    background-color: transparent;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 0.1px 1.5px, rgb(10, 10, 10) 0px 0px 0px 1px;
 }
-
 .ChatInputContainer{
     background-color: rgba(165, 215, 232, 0.2);
 }
@@ -238,6 +241,9 @@
     }
     .contactsContainer .contactsList .contact .username h3{
         font-size: 12px;
+    }
+    .contactsContainer .contactsList .contact.selected h3{
+        font-size: 14px;
     }
     .contactsContainer .currentUser .username h2{
         font-size: 15px;

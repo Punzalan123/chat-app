@@ -46,8 +46,8 @@
 }
 
 .formContainer form button{
-    background-color: #19376D;
-    color: whitesmoke;
+    background-color: #A5D7E8;
+    color: #0B2447;
     padding: 1rem 2rem;
     border: none;
     border-radius: 0.5rem;
@@ -58,8 +58,8 @@
 }
 
 .formContainer form button:hover{
-    background-color: #A5D7E8;
-    color: #0B2447;
+    background-color: #19376D;
+    color: white;
 }
 
 .formContainer form span{
