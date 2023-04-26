@@ -29,13 +29,32 @@
 }
 .contactsContainer .contactsList .contact{
     background-color: #576CBC;
-    padding: 10px 0;
-    width: 90%;
+    padding: 5px ;
+    width: 95%;
     border-radius: 8px;
     cursor: pointer;
     display: flex;
     align-items: center;
+    /* justify-content: center; */
+}
+
+.contactsList .contact .userAvatar, .userDetails .userAvatar{
+    font-size: 14px;
+    width: 2.5em;
+    height: 2.5em;
+    border-radius: 50%;
+    border: 2px solid whitesmoke;
+    display: inline-flex;
+    align-items: center;
     justify-content: center;
+    margin-right: 5px;
+}
+
+.contactsList .contact .userAvatar::after, .userDetails .userAvatar::after{
+    content: attr(data-label);
+    color: white;
+    font-weight: bold;
+
 }
 
 .contactsContainer .contactsList .contact .username h3{
@@ -47,9 +66,9 @@
     transition: 0.3s ease-in;
 }
 
-.contactsContainer .contactsList .contact.selected h3{
+/* .contactsContainer .contactsList .contact.selected h3{
     font-size: 21px;
-}
+} */
 
 .contactsContainer .currentUser {
     background-color: #576CBC;
@@ -92,6 +111,9 @@
     justify-content: space-between;
     padding: 10px 20px;
     background-color: #0B2447;
+    box-shadow: 0px 5px 20px 0px rgba(0,0,0,0.35);
+    -webkit-box-shadow: 0px 5px 20px 0px rgba(0,0,0,0.35);
+    -moz-box-shadow: 0px 5px 20px 0px rgba(0,0,0,0.35);
 }
 
 
@@ -99,6 +121,7 @@
     display: flex;
     align-items: center;
 }
+
 .chatCon .chatHeader .userDetails .userName, .chatCon .chatHeader span, .welcomeCon h1, .welcomeCon h3 {
     color: whitesmoke;
 }
@@ -140,8 +163,7 @@
     color: whitesmoke;
 }
 .logOutBtn:hover{
-    background-color: transparent;
-    box-shadow: rgba(0, 0, 0, 0.16) 0px 0.1px 1.5px, rgb(10, 10, 10) 0px 0px 0px 1px;
+    background-color: rgba(11, 36, 71, 0.85);
 }
 .ChatInputContainer{
     background-color: rgba(165, 215, 232, 0.2);
@@ -220,12 +242,19 @@
 }
 
 .chatCon .chatMessages .message .messageContent{
-    max-width: 40%;
+    max-width: 85%;
     overflow-wrap: break-word;
-    padding: 12px 15px;
+    padding: 10px 13px;
     font-size: 15px;
+    display: flex;
+    flex-direction: column;
     border-radius: 10px;
     color: whitesmoke;
+}
+
+.chatCon .chatMessages .message .messageContent p{    
+    min-height: 19px;
+    min-width: 5px;
 }
 
 .messageContent {
@@ -242,13 +271,18 @@
     .contactsContainer .contactsList .contact .username h3{
         font-size: 12px;
     }
-    .contactsContainer .contactsList .contact.selected h3{
+    /* .contactsContainer .contactsList .contact.selected h3{
         font-size: 14px;
-    }
+    } */
     .contactsContainer .currentUser .username h2{
         font-size: 15px;
     }
     .logOutBtn{
         font-size: 11px;
+    }
+    .contactsList .contact .userAvatar, .userDetails .userAvatar{
+        font-size: 13px;
+        height: 2.4em;
+        width: 2.4em;
     }
 }

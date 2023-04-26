@@ -23,7 +23,7 @@ export const ChatInput = ({handleSnM}) => {
                 value={msg}
                 onChange={e => setMsg(e.target.value)}
             />
-            <button className='ChatSubmit'>
+            <button className='ChatSubmit' disabled={msg.length > 1 ? false : true }>
                 <Send />
             </button>
         </form>

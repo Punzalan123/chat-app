@@ -20,6 +20,21 @@ export const Contacts = ({contacts, current, chat}) => {
         setSelect(i);
         chat(c);
     };
+    // 
+    useEffect(() => {
+        const avatars = document.querySelectorAll(".userAvatar");
+
+        avatars.forEach((a) => {
+          const charCodeRed = a.dataset.label.charCodeAt(0);
+          const charCodeGreen = a.dataset.label.charCodeAt(1) || charCodeRed;
+
+          const red = (Math.pow(charCodeRed, 7) % 200) / 2;
+          const green = red >= 25 ? (Math.pow(charCodeGreen, 7) % 200 ) / 2 : 35;
+          const blue = ((green + red) % 200) * 3;
+          a.style.background = `rgb(${red}, ${green}, ${blue})`;
+        });
+    }, [contacts]);
+    // 
 
   return <React.Fragment>
     {
@@ -36,6 +51,8 @@ export const Contacts = ({contacts, current, chat}) => {
                         key={i}
                         onClick={() => changeChat(i, c)}
                         >
+                            <div className='userAvatar' data-label={c.username[0]} >
+                            </div>
                             <div className='username'>
                                 <h3>{c.username}</h3>
                             </div>

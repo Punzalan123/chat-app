@@ -57,6 +57,20 @@ export const ChatCon = ({ current, currentUser, socket }) => {
         scrollRef.current?.scrollIntoView({behaviour: "smooth"});
     }, [msg]);
 
+    useEffect(() => {
+        const avatars = document.querySelectorAll(".userAvatar");
+
+        avatars.forEach((a) => {
+          const charCodeRed = a.dataset.label.charCodeAt(0);
+          const charCodeGreen = a.dataset.label.charCodeAt(1) || charCodeRed;
+
+          const red = (Math.pow(charCodeRed, 7) % 200) / 2;
+          const green = red >= 25 ? (Math.pow(charCodeGreen, 7) % 200 ) / 2 : 35;
+          const blue = ((green + red) % 200) * 3;
+          a.style.background = `rgb(${red}, ${green}, ${blue})`;
+        });
+    }, [current]);
+
     return (
         <React.Fragment>
             {
@@ -65,6 +79,8 @@ export const ChatCon = ({ current, currentUser, socket }) => {
                     <div className='chatCon'>
                         <div className='chatHeader'>
                             <div className='userDetails'>
+                                <div className='userAvatar' data-label={current.username[0]} >
+                                </div>
                                 <div className='userName'>
                                     <h3>{current.username}</h3>
                                 </div>
